@@ -1,0 +1,65 @@
+{
+  "consumer": {
+    "name": "shopping-cart-service"
+  },
+  "provider": {
+    "name": "product-service"
+  },
+  "interactions": [
+    {
+      "description": "get product by id",
+      "providerState": "product with id 123 exists",
+      "request": {
+        "method": "GET",
+        "path": "/products/123"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "id": 123,
+          "name": "Example Product",
+          "price": 9.99
+        }
+      }
+    },
+    {
+      "description": "get product by category",
+      "providerState": "category with id 123 exists",
+      "request": {
+        "method": "GET",
+        "path": "/category/123"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "products": [
+            {
+              "id": 123,
+              "name": "Example Product",
+              "price": 9.99
+            },
+            {
+              "id": 124,
+              "name": "Example Product 4",
+              "price": 9.99
+            },
+            {
+              "id": 125,
+              "name": "Example Product 5",
+              "price": 9.99
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

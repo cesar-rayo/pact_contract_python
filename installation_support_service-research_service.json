@@ -1,0 +1,36 @@
+{
+  "consumer": {
+    "name": "Installation Support Service"
+  },
+  "provider": {
+    "name": "Research Service"
+  },
+  "interactions": [
+    {
+      "description": "a request for fake panel with voltage 50 and current 0",
+      "providerState": "a url",
+      "request": {
+        "method": "get",
+        "path": "/solar/panel_efficiency",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "model": "fake",
+          "model_efficiency": "Known Inefficient",
+          "panel_efficiency": "Inefficient"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
